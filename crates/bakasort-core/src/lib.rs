@@ -1,5 +1,9 @@
 pub trait BakaSort {
-    fn sort<T>(v: Vec<T>) -> Vec<T>
-    where
-        T: PartialOrd + Ord;
+    type Item: PartialOrd + Ord;
+    fn step(v: Vec<Self::Item>) -> Vec<Self::Item>;
+}
+
+pub trait AsyncBakaSort {
+    type Item: PartialOrd + Ord;
+    fn step(v: Vec<Self::Item>) -> impl Future<Output = Vec<Self::Item>>;
 }
