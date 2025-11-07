@@ -9,6 +9,10 @@ version = "0.1.0"
 [[package]]
 name = "bakasort"
 version = "0.1.0"
+dependencies = [
+ "bakasort-core",
+ "flume",
+]
 
 [[package]]
 name = "bakasort-core"
