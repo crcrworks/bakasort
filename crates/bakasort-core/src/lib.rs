@@ -1,6 +1,8 @@
-pub trait BakaSort {
-    type Item: PartialOrd + Ord;
-    fn sort<T>(array: T, sender: flume::Sender<Vec<Self::Item>>) -> Vec<Self::Item>
+pub trait BakaSort<I>
+where
+    I: PartialOrd + Ord,
+{
+    fn sort<T>(array: T, sender: flume::Sender<Vec<I>>) -> Vec<I>
     where
-        T: IntoIterator<Item = Self::Item>;
+        T: IntoIterator<Item = I>;
 }
