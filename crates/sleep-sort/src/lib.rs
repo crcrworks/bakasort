@@ -1,6 +1,5 @@
 use std::{sync::Arc, time::Duration};
 
-use bakasort_core::BakaSort;
 use tokio::{sync::Mutex, time::sleep};
 
 pub struct SleepSort {}
